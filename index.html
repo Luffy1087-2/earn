@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investings</title>
+    <style>
+        table {
+            width: 40%;
+            margin-top: 15px;
+        }
+
+        thead {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        table, th, td {
+          border:none;
+        }
+    </style>
+    <script type="text/javascript" src="./start.js" defer></script>
+</head>
+<body>
+    <fieldset>
+        <legend>Start-Up Capital</legend>
+        <label for="capital">Type your capital amount</label>
+        <input id="capital" type="text" value="10000" />
+    </fieldset>
+    <fieldset>
+        <legend>APY</legend>
+        <label for="apy">Type the Interest per year</label>
+        <input id="apy" type="text" value="10" />
+        <span>%</span>
+    </fieldset>
+    <fieldset>
+        <legend>Compound Interest</legend>
+        <label for="compound-interest">Should add compount interest?</label>
+        <input id="compound-interest" type="checkbox" />
+    </fieldset>
+    <fieldset>
+        <legend>Years</legend>
+        <label for="years">How many years you wanna see your profits for?</label>
+        <input id="years" type="text" value="1" />
+    </fieldset>
+    <div id="report">
+    </div>
+</body>
+</html>
