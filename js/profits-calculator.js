@@ -68,7 +68,8 @@ class ProfitsCalculator {
     canCalculateProfits (capital, apy, years) {
         return  capital > 0 &&
                 apy >= 1 &&
-                years >= 1
+                years >= 1 &&
+                years <= 90;
     }
 
     fixAmount (amount) {

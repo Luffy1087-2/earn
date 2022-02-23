@@ -7,8 +7,15 @@ class Facade {
         this.tables = new Tables();
     }
 
-    drawTables (capital, apy, isCompoundInterest, years) {
-        if (!this.calc.canCalculateProfits(capital, apy, years)) {
+    drawTables (capital, apy, isCompoundInterest, years, evt) {
+        let newYears = years;
+        
+        if (this.shouldForceYear(evt)) {
+            newYears = evt.currentTarget.value = 90;
+        }
+
+        if (!this.calc.canCalculateProfits(capital, apy, newYears)) {
+            evt.preventDefault();
             return;
         }
 
@@ -16,6 +23,16 @@ class Facade {
         console.log(profits);
         this.tables.clear();
         this.tables.drawTables(profits);
+    }
+
+    shouldForceYear (evt) {
+        if (!evt) {
+            return false;
+        }
+        
+        const el = evt.currentTarget;
+
+        return el.id === 'years' && el.value > 90;
     }
 }
 
